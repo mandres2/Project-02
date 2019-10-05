@@ -6,8 +6,9 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
-    res.json(req.user);
+  //Refer back if error/bugs app.post("/api/login", passport.authenticate("local"),
+  app.post("/api/chooseCollege", passport.authenticate("local"), function(req, res) {
+    res.json("/chooseCollege");
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -18,8 +19,11 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password
     })
+    // Redirection on successful creation of an account.
       .then(function() {
-        res.redirect(307, "/api/login");
+        console.log("hello world")
+        res.redirect(307, "/api/chooseCollege");
+        //res.json("/chooseCollege")
       })
       .catch(function(err) {
         res.status(401).json(err);

@@ -14,18 +14,18 @@ PRIMARY KEY (id)
 collegeid()
 );
 
--- Table 2 - Colleges
-CREATE TABLE colleges (
-id
+-- -- Table 2 - Colleges
+-- CREATE TABLE colleges (
+-- id
+-- );
 
+-- PRIMARY KEY (collegeid)
+-- );
 
-PRIMARY KEY (collegeid)
-);
+-- -- Table 3 - User's Selected Colleges
+-- CREATE TABLE userFavColleges(
 
--- Table 3 - User's Selected Colleges
-CREATE TABLE userFavColleges(
-
-);
+-- );
 
 
 
