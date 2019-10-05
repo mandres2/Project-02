@@ -1,0 +1,62 @@
+{
+  "name": "college-choice-js",
+  "version": "0.0.0",
+  "author": "18F",
+  "license": "CC0",
+  "description": "Scripts for the college-choice project.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:18F/college-choice.git"
+  },
+  "scripts": {
+    "build": "`js/src/browserify-args.sh | xargs -L1 browserify`",
+    "watch": "`js/src/browserify-args.sh | xargs -L1 watchify -v`",
+    "lint": "jshint -c .jshintrc js/src",
+    "test-unit": "mocha -- test/unit",
+    "test-unit-ci": "XUNIT_FILE=test/reports/mocha/unit.xml mocha -R spec-xunit-file -- test/unit",
+    "test-a11y": "./test/a11y.js",
+    "test": "wdio test/wdio.conf.js",
+    "test-quick": "wdio test/wdio.quick.js",
+    "test-sauce": "wdio test/wdio.sauce.js",
+    "test-ci": "wdio test/wdio.ci.js"
+  },
+  "dependencies": {
+    "aight": "^2.1.1",
+    "async": "*",
+    "d3": "^3.5.9",
+    "document-register-element": "^1.13.1",
+    "element-closest": "^2.0.2",
+    "element-dataset": "^2.2.6",
+    "formdb": "^0.2.0",
+    "html-parsed-element": "^0.4.0",
+    "jquery": "^3.4.0",
+    "leaflet": "^0.7.7",
+    "typeahead.js-browserify": "^1.0.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "babelify": "^10.0.0",
+    "browserify": "^12.0.1",
+    "extend": "^3.0.2",
+    "jshint": "^2.9.7",
+    "minifyify": "^7.3.5",
+    "mocha": "^6.2.0",
+    "pa11y": "^4.13.2",
+    "request": "^2.88.0",
+    "simple-statistics": "^1.0.1",
+    "sinon": "^1.17.2",
+    "spec-xunit-file": "0.0.1-3",
+    "stream-array": "^1.1.1",
+    "tito": "^0.4.0",
+    "uglify-js": "^3.4.9",
+    "watchify": "^3.11.1",
+    "wdio-mocha-framework": "^0.6.4",
+    "webdriverio": "^4.14.4",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "engines": {
+    "node": ">= 8.11.1"
+  }
+}

@@ -1,0 +1,10 @@
+.env
+.sass-cache
+_config.local.yml
+_site
+npm-debug.log
+test/screenshots
+node_modules
+index.html.*
+build.log
+js/picc.js*

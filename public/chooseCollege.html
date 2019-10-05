@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- This is the main page after the user is authenticated. -->
+
+<head>
+  <title>Select Colleges</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="stylesheets/style.css" rel="stylesheet">
+
+</head>
+
+<!-- Style to fix the issue of text extending past card length -->
+<style>
+  .card-body a {
+    word-break: break-all;
+  }
+
+  .articleHeadline {
+    line-height: 1.5;
+  }
+
+  body {
+    color: black;
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2 style="color:black;">Welcome <span class="member-name"></span> Please select the colleges you want to consider applying for</h2>
+
+        <!-- This is where I need to implement my Collegescorecard API + MySQL Database -->
+
+        <!-- Main Bootstrap Search -->
+  <div class="container">
+
+    <!-- Jumbotron for Title -->
+    <div class="jumbotron" style="background-color: white ; color: black; position: center;">
+      <h1 class="text-center">
+        <strong>
+          <i class="fa fa-college-o"></i> College Search</strong>
+      </h1>
+    </div>
+
+    <!-- Row for Searching Colleges -->
+    <div class="row">
+      <div class="col-sm-12">
+        <br>
+        <!-- First card is for handling the search parameters -->
+        <div class="card">
+          <div class="card-header">
+            <strong>
+              <i class="fa fa-list-alt"></i> Search Parameters</strong>
+          </div>
+          <div class="card-body">
+
+            <!-- Here we create an HTML Form for handling the inputs-->
+            <form role="form">
+
+              <!-- Here we create the text box for capturing the search term-->
+              <div class="form-group">
+                <label for="search">Search Term:</label>
+                <input type="text" class="form-control" id="search-term">
+              </div>
+
+              <!-- Here we have our final submit button -->
+              <button type="submit" class="btn btn-default" id="run-search">
+                <i class="fa fa-search"></i> Search</button>
+              <button class="btn btn-default" id="clear-all">
+                <i class="fa fa-trash"></i> Clear Results</button>
+
+            </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/members.js"></script>
+  <script type="text/javascript" src="js/collegeSearch.js"></script>
+
+</body>
+
+</html>
