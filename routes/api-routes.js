@@ -11,6 +11,11 @@ module.exports = function(app) {
     res.json("/chooseCollege");
   });
 
+  // This piece of code is to connect the login for the user to the welcome/home page.
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+    res.json(req.user);
+  });
+
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -29,6 +34,12 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
+
+
+
+  // THE NEXT OBJECTIVE: GET THE /api/chooseCollege to the members page/welcome page
+
+
 
   // Route for logging user out
   app.get("/logout", function(req, res) {

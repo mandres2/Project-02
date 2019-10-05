@@ -2,17 +2,27 @@
 
 function buildQueryURL() {
     // queryURL is the url we'll use to query the API
-    var queryURL = "https://api.data.gov/ed/collegescorecard/v1/schools.json?";
+    // var queryURL = "https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF?";
+    // var queryURL = "https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF?";
+
+    var queryURL ="https://api.data.gov/ed/collegescorecard/v1/schools?api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF&school.name="+$("#search-term")
+    .val()
+    .trim();
+
+
+    // "https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF&school.degrees_awarded.predominant=2,3&_fields=id,school.name,2013.student.size";
+
+    // "https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF?q=University%20of%20Washington";
 
     // Begin building an object to contain our API call's query parameters
     // Set the API key
     var queryParams = {
-        "api-key": "hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF"
+
     };
 
 
     // Grab text the user typed into the search input, add to the queryParams object
-    queryParams.q = $("#search-term")
+    queryParams["school.name"] = $("#search-term")
         .val()
         .trim();
 
