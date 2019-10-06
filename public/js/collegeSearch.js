@@ -1,24 +1,25 @@
-// This is the file that is designated to hit the Collegescore Card API Database
+// This is the file that is designated to hit the CollegeScore Card API Database
 
 function buildQueryURL() {
     // queryURL is the url we'll use to query the API
-    // var queryURL = "https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF?";
-    // var queryURL = "https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF?";
 
-    var queryURL ="https://api.data.gov/ed/collegescorecard/v1/schools?api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF&school.name="+$("#search-term")
-    .val()
-    .trim();
+    var queryURL ="https://api.data.gov/ed/collegescorecard/v1/schools?api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF&_fields=id,school.name,school.state,school.school_url&school.name="+$("#search-term").val().trim();
+
+// ====================================================================================================================================== //
+
+// NOTES:
+//This line will list the universities the user searched that is provided with the school's id and name: In this example, University of Washington is used -->
+// https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF&school.name=University%20of%20Washington&_fields=id,school.name
+
+// https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF&school.name=NAME%20of%20SCHOOL&_fields=id,school.name
 
 
-    // "https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF&school.degrees_awarded.predominant=2,3&_fields=id,school.name,2013.student.size";
+// ====================================================================================================================================== //
 
-    // "https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF?q=University%20of%20Washington";
 
     // Begin building an object to contain our API call's query parameters
     // Set the API key
-    var queryParams = {
-
-    };
+    var queryParams = {"api-key": "hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF"};
 
 
     // Grab text the user typed into the search input, add to the queryParams object
@@ -42,22 +43,22 @@ function updatePage(collegeData) {
     console.log(collegeData);
     console.log("------------------------------------");
 
-    // Loop through and build elements for the defined number of articles
+    // Loop through and build elements for the defined number of colleges
     for (var i = 0; i < numColleges; i++) {
-        // Get specific article info for current index
+        // Get specific college info for current index
         var college = collegeData.response.docs[i];
 
-        // Increase the articleCount (track article # - starting at 1)
+        // Increase the collegeCount (track college # - starting at 1)
         var collegeCount = i + 1;
 
-        // Create the  list group to contain the articles and add the article content for each
+        // Create the  list group to contain the colleges and add the college content for each
         var $collegeList = $("<ul>");
         $collegeList.addClass("list-group");
 
         // Add the newly created element to the DOM
         $("#college-section").append($collegeList);
 
-        // If the article has a headline, log and append to $articleList
+        // If the college has a headline, log and append to $collegeList
         var headline = college.headline;
         var $collegeListItem = $("<li class='list-group-item collegeHeadline'>");
 
@@ -84,12 +85,12 @@ function updatePage(collegeData) {
         $collegeListItem.append("<a href='" + college.web_url + "'>" + college.web_url + "</a>");
         console.log(college.web_url);
 
-        // Append the article
-        $articleList.append($collegeListItem);
+        // Append the college
+        $collegeList.append($collegeListItem);
     }
 }
 
-// Function to empty out the articles
+// Function to empty out the college
 function clear() {
     $("#college-section").empty();
 }
@@ -104,7 +105,7 @@ $("#run-search").on("click", function (event) {
     // (in addition to clicks). Prevents the page from reloading on form submit.
     event.preventDefault();
 
-    // Empty the region associated with the articles
+    // Empty the region associated with the colleges
     clear();
 
     // Build the query URL for the ajax request to the NYT API

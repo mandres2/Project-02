@@ -15,12 +15,15 @@ collegeid()
 );
 
 -- -- Table 2 - Colleges
--- CREATE TABLE colleges (
--- id
--- );
-
--- PRIMARY KEY (collegeid)
--- );
+CREATE TABLE colleges (
+collegeid INT(11) NOT NULL AUTO_INCREMENT,
+schoolname VARCHAR(255),
+schoolid INTEGER
+cost INTEGER
+SATs&ACTs VARCHAR(255),
+PRIMARY KEY (collegeid)
+favCollege()
+);
 
 -- -- Table 3 - User's Selected Colleges
 -- CREATE TABLE userFavColleges(
