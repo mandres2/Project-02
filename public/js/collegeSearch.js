@@ -40,75 +40,54 @@ function buildQueryURL() {
 
 /**
  * takes API data (JSON/object) and turns it into elements on the page
- * @param {object} collegeData - object containing CollegeScoreCard API data
+ *
  */
 
 function updatePage(collegeData) {
+
     // Get from the form the number of results to display
     // API doesn't have a "limit" parameter, so we have to do this ourselves
     var numColleges = $("#college-count").val();
 
     // Log the College to console, where it will show up as an object
-    console.log(collegeData);
+    console.log(collegeData.results);
+    console.log(numColleges);
     console.log("------------------------------------");
 
     // Loop through and build elements for the defined number of colleges
-    for (var i = 0; i < numColleges; i++) {
+    for (var i = 0; i < collegeData.results.length; i++) {
         // Get specific college info for current index
-
         // For some reason there is an error because docs is undefined. If I removed the docs then the var headline is undefined...
-        var college = collegeData.response.docs[i];
-        //var college = collegeData.response;
+        // var college = collegeData.response.data.docs[i];
+        var college = collegeData.results[i];
+        console.log(college);
+
 
         // Increase the collegeCount (track college # - starting at 1)
         var collegeCount = i + 1;
-
         // Create the list group to contain the colleges and add the college content for each
         var $collegeList = $("<ul>");
         $collegeList.addClass("list-group");
 
+
+
+        // college search parameters that will append to $collegeList
+        var collegeID = college.id;
+        // var collegeName = school.name;
+        console.log(collegeID);
+
+        var $collegeListItem = $("<li class='list-group-item collegeGroups'>");
+
+        $collegeListItem.append(collegeData.results[i].id);
+        // $collegeListItem.append(collegeData.results[i].school.name);
+
+        $collegeList.append($collegeListItem);
+
         // Add the newly created element to the DOM
         $("#college-section").append($collegeList);
 
-        // If the college has a headline, log and append to $collegeList
-        var headline = college.headline;
-        var $collegeListItem = $("<li class='list-group-item collegeHeadline'>");
-
-        // if (headline && headline.main) {
-        console.log(headline.main);
-        $collegeListItem.append(
-            "<span class='label label-primary'>" +
-            collegeCount +
-            "</span>" +
-            "<strong> " +
-            headline.main +
-            "</strong>"
-        );
         }
-
-
-        // var byline = college.byline;
-
-        // if (byline && byline.original) {
-        //     console.log(byline.original);
-        //     $collegeListItem.append("<h5>" + byline.original + "</h5>");
-        // }
-
-        // Log section, and append to document if exists
-        var section = college.section_name;
-        console.log(college.section_name);
-        if (section) {
-            $collegeListItem.append("<h5>Section: " + section + "</h5>");
-        }
-
-        // Append and log url
-        $collegeListItem.append("<a href='" + college.web_url + "'>" + college.web_url + "</a>");
-        console.log(college.web_url);
-
-        // Append the college
-        $collegeList.append($collegeListItem);
     }
-
 
 // Function to empty out the college
 function clear() {
@@ -128,16 +107,20 @@ $("#run-search").on("click", function (event) {
     // Empty the region associated with the colleges
     clear();
 
+
     // Build the query URL for the ajax request to the NYT API
     var queryURL = buildQueryURL();
 
-    // Make the AJAX request to the API - GETs the JSON data at the queryURL.
-    // The data then gets passed as an argument to the updatePage function
+     // Make the AJAX request to the API - GETs the JSON data at the queryURL.
+     // The data then gets passed as an argument to the updatePage function
     $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(updatePage);
-});
+    url: queryURL,
+    method: "GET"
+    }).then(function(response){
+
+        updatePage(response);
+    });
+    });
 
 //  .on("click") function associated with the clear button
 $("#clear-all").on("click", clear);
