@@ -45,13 +45,9 @@ function buildQueryURL() {
 
 function updatePage(collegeData) {
 
-    // Get from the form the number of results to display
-    // API doesn't have a "limit" parameter, so we have to do this ourselves
-    var numColleges = $("#college-count").val();
-
     // Log the College to console, where it will show up as an object
     console.log(collegeData.results);
-    console.log(numColleges);
+
     console.log("------------------------------------");
 
     // Loop through and build elements for the defined number of colleges
@@ -62,24 +58,33 @@ function updatePage(collegeData) {
         var college = collegeData.results[i];
         console.log(college);
 
-
-        // Increase the collegeCount (track college # - starting at 1)
-        var collegeCount = i + 1;
         // Create the list group to contain the colleges and add the college content for each
         var $collegeList = $("<ul>");
         $collegeList.addClass("list-group");
 
-
-
         // college search parameters that will append to $collegeList
+
+        // University's ID
         var collegeID = college.id;
-        // var collegeName = school.name;
+        // Testing variable to see if the data from the object
         console.log(collegeID);
+
+        // University's Name
+        var collegeName = college["school.name"];
+        console.log(collegeName);
+
+        // University's URL
+        var collegeURL = college["school.school_url"];
+        console.log(collegeURL);
 
         var $collegeListItem = $("<li class='list-group-item collegeGroups'>");
 
-        $collegeListItem.append(collegeData.results[i].id);
-        // $collegeListItem.append(collegeData.results[i].school.name);
+        $collegeListItem.append(`<p>${collegeData.results[i].id}</p>`);
+        // This is where the heart icon is placed and this will activate the api-route function as well as saving the user data.
+        $collegeListItem.append(`<i data-favID = ${collegeData.results[i].id} class="favorite fa fa-heart"></i>`);
+        $collegeListItem.append(`<p>${collegeData.results[i]["school.name"]}</p>`);
+        $collegeListItem.append(`<p>${collegeData.results[i]["school.state"]}</p>`);
+        $collegeListItem.append(`<p>${collegeData.results[i]["school.school_url"]}</p>`);
 
         $collegeList.append($collegeListItem);
 
@@ -88,6 +93,18 @@ function updatePage(collegeData) {
 
         }
     }
+    // This on click function saves the user's id info when they click the heart icon.
+    $(document).on("click", ".favorite", function() {
+        var favID = $(this).attr("data-favID");
+        console.log(favID);
+        //=============== PUT Request Placed here: ====================//
+        $.ajax("/api/favorites/"+favID, {
+            type: "PUT",
+        }).then(function(addData) {
+            console.log(addData);
+        });
+    });
+
 
 // Function to empty out the college
 function clear() {
@@ -117,10 +134,9 @@ $("#run-search").on("click", function (event) {
     url: queryURL,
     method: "GET"
     }).then(function(response){
-
         updatePage(response);
     });
-    });
+});
 
 //  .on("click") function associated with the clear button
 $("#clear-all").on("click", clear);

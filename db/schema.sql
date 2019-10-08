@@ -3,35 +3,14 @@
 DROP DATABASE IF EXISTS collegeapp_db;
 CREATE DATABASE collegeapp_db;
 
--- Table 1 - This is for User authentication AND setting this up with Table 3 CollegeFavorites + Table 4 To-Do
+-- Table 1 - This is for User authentication
 CREATE TABLE users (
 id INT(11) NOT NULL AUTO_INCREMENT,
 email VARCHAR(255),
 password VARCHAR(255),
+favCollegeID INTEGER,
 createdAt datetime,
-updatedAt datetime
-PRIMARY KEY (id)
+updatedAt datetime,
+PRIMARY KEY (id),
 collegeid()
 );
-
--- -- Table 2 - Colleges
-CREATE TABLE colleges (
-collegeid INT(11) NOT NULL AUTO_INCREMENT,
-schoolname VARCHAR(255),
-schoolid INTEGER
-cost INTEGER
-SATs&ACTs VARCHAR(255),
-PRIMARY KEY (collegeid)
-favCollege()
-);
-
--- -- Table 3 - User's Selected Colleges
--- CREATE TABLE userFavColleges(
-
--- );
-
-
-
-
-
--- ***Table 4 - User's Todo
