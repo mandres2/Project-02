@@ -98,7 +98,14 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 
 <br>
 
+* <b>Tutors<b> Denis Molloy, Trae Sanks, Matthew Tedder
+
+<br>
+
 * <b>Teacher</b> - Arron Linton
+
+
+
 
 ## Progress Log:
 <br>

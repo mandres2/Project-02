@@ -86,13 +86,11 @@ function updatePage(collegeData) {
         $collegeListItem.append(`<p>${collegeData.results[i]["school.state"]}</p>`);
         $collegeListItem.append(`<p>${collegeData.results[i]["school.school_url"]}</p>`);
         $collegeList.append($collegeListItem);
-
         // Add the newly created element to the DOM
         $("#college-section").append($collegeList);
-
         }
     }
-    // This on click function saves the user's id info when they click the heart icon.
+    // This on-click function saves the user's id info when they click the heart icon.
     $(document).on("click", ".favorite", function() {
         var favID = $(this).attr("data-favID");
         console.log(favID);
@@ -101,7 +99,13 @@ function updatePage(collegeData) {
             type: "PUT",
         }).then(function(addData) {
             console.log(addData);
-        });
+        })
+
+        // This is to transition to the members page after the data is saved.
+        // .then(function(data) {
+        //     console.log(data)
+        //     window.location.replace("../members.html");
+
     });
 
 
