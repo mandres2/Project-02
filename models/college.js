@@ -15,8 +15,8 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     college.associate = function (models) {
-        // We're saying that a Post should belong to an Author
-        // A Post can't be created without an Author due to the foreign key constraint
+        // We're saying that a Post should belong to an user
+        // A Post can't be created without an user due to the foreign key constraint
         college.belongsTo(models.user, {
             onDelete: "cascade"
         });

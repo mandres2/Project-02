@@ -62,7 +62,7 @@ function updatePage(collegeData) {
         var $collegeList = $("<ul>");
         $collegeList.addClass("list-group");
 
-        // college search parameters that will append to $collegeList
+        // This is the college search parameters that will append to $collegeList
 
         // University's ID
         var collegeID = college.id;
@@ -85,7 +85,6 @@ function updatePage(collegeData) {
         $collegeListItem.append(`<p>${collegeData.results[i]["school.name"]}</p>`);
         $collegeListItem.append(`<p>${collegeData.results[i]["school.state"]}</p>`);
         $collegeListItem.append(`<p>${collegeData.results[i]["school.school_url"]}</p>`);
-
         $collegeList.append($collegeListItem);
 
         // Add the newly created element to the DOM
@@ -98,7 +97,7 @@ function updatePage(collegeData) {
         var favID = $(this).attr("data-favID");
         console.log(favID);
         //=============== PUT Request Placed here: ====================//
-        $.ajax("/api/favorites/"+favID, {
+        $.ajax("/api/favorites/" + favID, {
             type: "PUT",
         }).then(function(addData) {
             console.log(addData);

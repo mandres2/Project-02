@@ -108,7 +108,34 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 <br>
 :heavy_check_mark: 10.04 - Set-up and fix MySQL Databases & API routes.
 <br>
-:heavy_check_mark:
+:heavy_check_mark: 10.05 - Fix the authentication from signup to college search. Adjusted API routes.
 <br>
-:heavy_check_mark:
+:heavy_check_mark: 10.06 - Conducted research on CollegeScorecard API and look for data parameters to use as well as establishing hitting the API database, bringing back the data and rendering them into HTML elements.
+<br>
+:heavy_check_mark: 10.07 - Debugging and fixing API data. Store the data to that particular user and begin working on pathing it to the members homepage.
+<br>
+:heavy_check_mark: 10.08 - Fix the API data that will be saved for each user and set up api/html route to members page.
+<br>
+:heavy_check_mark: 10.09 - Fixing the Sequelize syntax and API data associated with. Attempting to route college search to members page.
+<br>
+:heavy_check_mark: 10.10
+<br>
+:heavy_check_mark: 10.11
+<br>
+:heavy_check_mark: 10.12
+<br>
+:heavy_check_mark: 10.13
+<br>
+:heavy_check_mark: 10.14
+<br>
+:heavy_check_mark: 10.15
+<br>
+:heavy_check_mark: 10.16
+<br>
+:heavy_check_mark: 10.17
+<br>
+:heavy_check_mark: 10.18
+<br>
+:heavy_check_mark: 10.19
+
 
