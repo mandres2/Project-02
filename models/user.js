@@ -17,18 +17,9 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    // These are other pieces of data that will be associated with that particular user. When the user signs up they will go to a college search and from there they will search their colleges and favorite one. These piece of data will be saved and be rendered onto the members page.
+    // These are the main pieces of data retrieved from College Scorecard that will be associated with that particular user. These data components will be saved and be rendered onto the members page, once the user clicks the heart-icon of their selected college/university.
     favCollegeID: {
       type: DataTypes.INTEGER
-    },
-    favCollegeName:{
-      type: DataTypes.STRING
-    },
-    favCollegeState:{
-      type: DataTypes.STRING
-    },
-    favCollegeURL:{
-      type: DataTypes.STRING
     }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database

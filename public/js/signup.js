@@ -21,7 +21,7 @@ $(document).ready(function() {
     passwordInput.val("");
   });
 
-  // Does a post to the signup route. If successful, we are redirected to the members page
+  // Does a post to the signup route. If successful, redirect to the 'College Search' page
   // Otherwise we log any errors
   function signUpUser(email, password) {
     console.log({email, password});
@@ -30,7 +30,8 @@ $(document).ready(function() {
       password: password
     })
       .then(function(data) {
-        console.log(data)
+        console.log(data);
+        // This is line of code is where it will redirect the first-time user.
         window.location.replace("/chooseCollege");
         // console.log(data);
         // window.location.replace(data);

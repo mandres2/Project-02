@@ -99,8 +99,9 @@ function updatePage(collegeData) {
             type: "PUT",
         }).then(function(addData) {
             console.log(addData);
-        })
+        });
 
+        //====== Check on this later once the other pieces of data from College Scorecard are saved to the user ====== //
         // This is to transition to the members page after the data is saved.
         // .then(function(data) {
         //     console.log(data)
@@ -141,5 +142,5 @@ $("#run-search").on("click", function (event) {
     });
 });
 
-//  .on("click") function associated with the clear button
+// .on("click") function associated with the clear button
 $("#clear-all").on("click", clear);

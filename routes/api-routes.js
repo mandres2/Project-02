@@ -28,7 +28,6 @@ module.exports = function (app) {
       .then(function () {
         console.log("testing");
         res.redirect(307, "/api/chooseCollege");
-        //res.json("/chooseCollege")
       })
       // Recap: The catch() method returns a Promise and deals with rejected cases only.
       .catch(function (err) {
@@ -57,17 +56,16 @@ module.exports = function (app) {
     }
   });
 
-
   // Route 3 (PUT): UPDATE
   // What this route does is that if the user has made a decision of their favorite/targeted college, the user will click the heart icon. Upon the click of the heart icon it will save the college's ID to MySQL and update the column. Upon
   app.put("/api/favorites/:id", function (req, res) {
 
     var favoriteID = parseInt(req.params.id);
     var userID = req.user.id;
-    console.log({
-      favoriteID,
-      userID
-    });
+    // console.log({
+    //   favoriteID,
+    //   userID
+    // });
 
     // This function will execute once the user hits the heart button and it will save the API data and eventually the data will be routed towards the main homepage.
     db.user.update({
@@ -77,23 +75,15 @@ module.exports = function (app) {
           id: userID
         }
       })
-      // Redirection on successful creation of an account.
+      // Redirection on selecting college.
       .then(function (data) {
-        // Now that we establish a redirection of the user this is where we will put the rest of the college information in:
-
-
-        // Instate a boolean statement (true or false) if the user has set their college to be a favorite.
-
-
+        // Establish a redirection of the user from college search to members page.
         console.log(data);
-        res.json("/chooseCollege")
+        res.redirect('/api/members', 301);
       })
       .catch(function (err) {
         res.status(401).json(err);
       });
-
-    // Get a glimpse of the user's object.
-    res.json(req.user);
   });
   // Closing curly brace for model.export = function(app)
 };
