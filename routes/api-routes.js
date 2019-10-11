@@ -70,13 +70,18 @@ module.exports = function (app) {
         where: {
           id: userID
         }
+
+        // If/else condition insertion: If the user has selected a favorite college redirect to /members
+
+
       })
       // Redirection on selecting college.
       .then(function (data) {
         console.log('db.user.update .then');
         // Establish a redirection of the user from college search to members page.
         console.log('college id', data);
-        res.redirect('/members');
+        windows.location.replace ('/members');
+        // I commented this out at 2307 in order to try out windows.location res.redirect('/members');
       })
       .catch(function (err) {
         res.status(401).json(err);
