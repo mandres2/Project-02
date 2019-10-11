@@ -125,9 +125,9 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 <br>
 :heavy_check_mark: 10.09 - Fixing the Sequelize syntax and API data associated with. Attempting to route college search to members page.
 <br>
-:heavy_check_mark: 10.10
+:heavy_check_mark: 10.10 - Fixing the API route from College Search to Members Page.
 <br>
-:heavy_check_mark: 10.11
+:heavy_check_mark: 10.11 - Establishing hitting the API data base by hitting the College ID and pulling up the information of college data onto the console then render it onto the HTML page. Upload project to Heroku.
 <br>
 :heavy_check_mark: 10.12
 <br>
@@ -144,5 +144,3 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 :heavy_check_mark: 10.18
 <br>
 :heavy_check_mark: 10.19
-
-
