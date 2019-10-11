@@ -80,11 +80,11 @@ module.exports = function (app) {
         console.log('db.user.update .then');
         // Establish a redirection of the user from college search to members page.
         console.log('college id', data);
-        windows.location.replace ('/members');
+        res.json(true)
         // I commented this out at 2307 in order to try out windows.location res.redirect('/members');
       })
       .catch(function (err) {
-        res.status(401).json(err);
+        res.json(err);
       });
   });
   // Closing curly brace for model.export = function(app)
