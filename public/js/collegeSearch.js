@@ -33,8 +33,8 @@ function buildQueryURL() {
         .trim();
 
     // Logging the URL so we have access to it for troubleshooting
-    console.log("---------------\nURL: " + queryURL + "\n---------------");
-    console.log(queryURL + $.param(queryParams));
+    // console.log("---------------\nURL: " + queryURL + "\n---------------");
+    // console.log(queryURL + $.param(queryParams));
     return queryURL + $.param(queryParams);
 }
 
@@ -46,9 +46,9 @@ function buildQueryURL() {
 function updatePage(collegeData) {
 
     // Log the College to console, where it will show up as an object
-    console.log(collegeData.results);
+    // console.log(collegeData.results);
 
-    console.log("------------------------------------");
+    // console.log("------------------------------------");
 
     // Loop through and build elements for the defined number of colleges
     for (var i = 0; i < collegeData.results.length; i++) {
@@ -56,7 +56,7 @@ function updatePage(collegeData) {
         // For some reason there is an error because docs is undefined. If I removed the docs then the var headline is undefined...
         // var college = collegeData.response.data.docs[i];
         var college = collegeData.results[i];
-        console.log(college);
+        // console.log(college);
 
         // Create the list group to contain the colleges and add the college content for each
         var $collegeList = $("<ul>");
@@ -98,7 +98,7 @@ function updatePage(collegeData) {
         $.ajax("/api/favorites/" + favID, {
             type: "PUT",
         }).then(function(addData) {
-            console.log(addData);
+            console.log('addData', addData);
         });
 
         //====== Check on this later once the other pieces of data from College Scorecard are saved to the user ====== //

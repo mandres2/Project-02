@@ -7,6 +7,16 @@ module.exports = function (app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   //Refer back if error/bugs app.post("/api/login", passport.authenticate("local"),
+
+  app.get('/', function (req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    } else {
+      res.redirect("/signup");
+    }
+  });
+
   app.post("/api/chooseCollege", passport.authenticate("local"), function (req, res) {
     res.json("/chooseCollege");
   });
@@ -59,13 +69,13 @@ module.exports = function (app) {
   // Route 3 (PUT): UPDATE
   // What this route does is that if the user has made a decision of their favorite/targeted college, the user will click the heart icon. Upon the click of the heart icon it will save the college's ID to MySQL and update the column. Upon
   app.put("/api/favorites/:id", function (req, res) {
-
+    console.log('/api/favorites/:id triggered');
     var favoriteID = parseInt(req.params.id);
     var userID = req.user.id;
-    // console.log({
-    //   favoriteID,
-    //   userID
-    // });
+    console.log({
+    favoriteID,
+    userID
+    });
 
     // This function will execute once the user hits the heart button and it will save the API data and eventually the data will be routed towards the main homepage.
     db.user.update({
@@ -77,9 +87,10 @@ module.exports = function (app) {
       })
       // Redirection on selecting college.
       .then(function (data) {
+        console.log('db.user.update .then');
         // Establish a redirection of the user from college search to members page.
-        console.log(data);
-        res.redirect('/api/members', 301);
+        console.log('college id', data);
+        res.redirect('/members');
       })
       .catch(function (err) {
         res.status(401).json(err);
