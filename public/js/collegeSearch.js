@@ -98,7 +98,8 @@ function updatePage(collegeData) {
         $.ajax("/api/favorites/" + favID, {
             type: "PUT",
         }).then(function(addData) {
-            console.log('addData', addData);
+            window.location.replace('/')
+            // console.log('addData', addData);
         });
 
         //====== Check on this later once the other pieces of data from College Scorecard are saved to the user ====== //
