@@ -21,7 +21,6 @@ function buildQueryURL() {
 
 // ====================================================================================================================================== //
 
-
     // Begin building an object to contain our API call's query parameters
     // Set the API key
     var queryParams = {"api-key": "hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF"};
@@ -53,8 +52,7 @@ function updatePage(collegeData) {
     // Loop through and build elements for the defined number of colleges
     for (var i = 0; i < collegeData.results.length; i++) {
         // Get specific college info for current index
-        // For some reason there is an error because docs is undefined. If I removed the docs then the var headline is undefined...
-        // var college = collegeData.response.data.docs[i];
+
         var college = collegeData.results[i];
         // console.log(college);
 
@@ -121,7 +119,6 @@ $("#run-search").on("click", function (event) {
 
     // Empty the region associated with the colleges
     clear();
-
 
     // Build the query URL for the ajax request to the NYT API
     var queryURL = buildQueryURL();
