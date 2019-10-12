@@ -1,10 +1,23 @@
 $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
+
   $.get("/api/user_data").then(function(data) {
+    // I have access of the college ID. I need to pass that ID into the API Call. Read the JSON object, and only grab what you need.
+    // log in the information in the back-end. worry about the rendering process later.
+    var collegeID = data.favCollegeID;
+    console.log(collegeID);
+
     $(".member-name").text(data.email);
-  });
+
+    var queryURL = "https://api.data.gov/ed/collegescorecard/v1/schools?id="+collegeID+"&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF";
+
+      $.get(queryURL).then(function(collegeData){
+      console.log(collegeData);
+      });
+    });
 });
+
 
 
 // THIS HERE IS WHERE WE WANT TO HIT THE ID OF THE COLLEGE AND PULL PARTICULAR PIECES OF DATA FROM THAT ID on to here:
@@ -20,4 +33,3 @@ c. Class Size/Graduation rate
 
 
 
-//  So this is where I need to create the members

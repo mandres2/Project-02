@@ -101,13 +101,6 @@ function updatePage(collegeData) {
             window.location.replace('/')
             // console.log('addData', addData);
         });
-
-        //====== Check on this later once the other pieces of data from College Scorecard are saved to the user ====== //
-        // This is to transition to the members page after the data is saved.
-        // .then(function(data) {
-        //     console.log(data)
-        //     window.location.replace("../members.html");
-
     });
 
 

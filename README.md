@@ -129,7 +129,7 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 <br>
 :heavy_check_mark: 10.11 - Establishing hitting the API data base by hitting the College ID and pulling up the information of college data onto the console then render it onto the HTML page. Upload project to Heroku.
 <br>
-:heavy_check_mark: 10.12
+:heavy_check_mark: 10.12 - Debugging uploading project to Heroku. Hitting the College Scorecard API again for that particular member's saved college's ID.
 <br>
 :heavy_check_mark: 10.13
 <br>
