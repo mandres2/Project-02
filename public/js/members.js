@@ -24,11 +24,23 @@ $(document).ready(function() {
       b. SATs/ACTs
       c. Class Size/Graduation rate
       */
-      console.log(collegeData);
+      // console.log(collegeData);
       // console.log used to hit particular query parameters of the api database
-      console.log(collegeData.results[0].latest.cost);
-      console.log(collegeData.results[0].latest.admissions);
-      console.log(collegeData.results[0].latest.aid);
+      // console.log(collegeData.results[0].latest.cost);
+      console.log(collegeData.results[0].latest.cost.tuition.in_state);
+      console.log(collegeData.results[0].latest.cost.tuition.out_of_state);
+      // console.log(collegeData.results[0].latest.admissions);
+      // console.log(collegeData.results[0].latest.aid);
+
+      // $(".collegeSearchParams").append("In-State Tuition " + collegeData.results[0].latest.cost.tuition.in_state);
+        // \n new line
+      $(".collegeSearchParams").append(" \n <br>" + "Out-of-State Tuition " + collegeData.results[0].latest.cost.tuition.out_of_state);
+
+      var collegeSearchResults = $("<p>").text("In-State Tuition" + collegeData.results[0].latest.cost.tuition.in_state);
+      collegeSearchResults.addClass("inStateTuition");
+
+      $(".collegeSearchParams").append(collegeSearchResults);
+
       });
     });
 
