@@ -1,7 +1,7 @@
 {
-  "name": "1-Passport-Example",
+  "name": "1-passport-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "# Name of Application What does it do?",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,6 +19,16 @@
     "mysql2": "^1.7.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "sequelize": "^5.8.6"
-  }
+    "path": "^0.12.7",
+    "sequelize": "^5.19.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandres2/Project-02.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mandres2/Project-02/issues"
+  },
+  "homepage": "https://github.com/mandres2/Project-02#readme"
 }
