@@ -6,27 +6,20 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- W3.CSS -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+
+    <!-- Local CSS -->
+    <link href="stylesheets/style.css" rel="stylesheet">
+
 </head>
-
-<body>
-    <!-- This is the main page after the user is authenticated and has selected a college -->
-
-    <head>
-        <title>Home Page</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-        <link href="stylesheets/style.css" rel="stylesheet">
-
-    </head>
-
     <body>
         <nav class="navbar navbar-default">
+            <img src="./assets/img/college gif.gif" class="w3-round-xxlarge" style="width:100px;">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/logout">
@@ -40,18 +33,18 @@
         </nav>
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
-                    <h2>Welcome <span class="member-name"></span> !</h2>
-                    <!-- This short .js script is just to render the user's selected College/University's Name  -->
+                <div class="col-md-6 col-md-offset-3" style="margin-left: 0px;">
+                    <h1 style="margin-left: 20px;">Welcome <span class="member-name"></span> !</h1>
 
                     <!-- This is where the user's selected college will be rendered to as well as the checklist -->
                     <div class="collegeSearchResult">
                         <div class="container">
-                            <h1 class="display-1">Here is your information of the college you have selected: </h1>
+                            <h4 class="display-4" style="margin-right: 100px; border-right-width:10px; margin-left: 0px;">Here is your information of the college you have selected: </h4>
                             <!-- display-2 is where the university's alias is rendered -->
-                            <h1 class="display-2"></h1>
+                            <h2 class="display-2"></h2>
                             <!-- College Information rendered here -->
                             <div class="collegeSearchParams"></div>
+
                         </div>
                     </div>
 
@@ -67,17 +60,17 @@
 
 
         <div id="myDIV" class="header">
-            <h2 style="margin:5px">College Entrance CheckList</h2>
+            <h2 style="margin:5px">college.leap Checklist</h2>
             <input type="text" id="myInput" placeholder="What I need to do...">
             <span onclick="newElement()" class="addBtn">Add</span>
         </div>
 
         <ul id="myUL">
-            <li class="checked">Look into a college to consider applying for</li>
-            <li>Research College</li>
+            <li class="checked">Look into a college to apply for.</li>
+            <li>Schedule a time to visit the campus</li>
             <li>Sign-up For SATs/ACTs</li>
             <li>Prepare for SATs/ACTs</li>
-            <li>Look at the Resources page and look up how to make effective college essays</li>
+            <li>Go to 'Resources' and look up how to make effective college essays</li>
             <li>Practice college interviews</li>
         </ul>
 

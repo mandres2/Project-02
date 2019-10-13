@@ -1,7 +1,11 @@
 /* ==================================================== User's Sign-up and Login ==================================================== */
 
-.loginContainer{
-  background-color: #FFD99C;
+.loginForm {
+  background-color: #d8f8ff;
+}
+
+.signupForm {
+  background-color: #d8f8ff;
 }
 
 form.signup,
@@ -9,9 +13,14 @@ form.login {
   margin-top: 50px;
 }
 
+.navbar{
+  background-color: #d8f8ff;
+  color: white;
+}
+
 /* Pertains to ALL .html pages */
 body {
-  /* background-image: url(""); */
+  background-color: #7CBECC;
   font-family: 'Roboto', sans-serif;
   color: black;
 }
@@ -27,6 +36,17 @@ body {
 }
 
 /* ==================================================== Members.html CSS ==================================================== */
+
+.collegeSearchParams{
+  background-color: white;
+}
+
+.w3-round-xxlarge{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
 
 /* ==================================================== Checklist ==================================================== */
 

@@ -63,7 +63,7 @@ module.exports = function (app) {
     userID
     });
 
-    // This function will execute once the user hits the heart button and it will save the API data and eventually the data will be routed towards the main homepage.
+    // This function will execute once the user hits the heart button and it will save the API data and eventually the data will be routed towards the member homepage.
     db.user.update({
         favCollegeID: favoriteID
       }, {
@@ -78,7 +78,6 @@ module.exports = function (app) {
         // Establish a redirection of the user from college search to members page.
         console.log('college id', data);
         res.json(true);
-        // I commented this out at 2307 in order to try out windows.location res.redirect('/members');
       })
       .catch(function (err) {
         res.json(err);
