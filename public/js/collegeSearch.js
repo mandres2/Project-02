@@ -9,7 +9,6 @@ function buildQueryURL() {
     var queryURL ="https://api.data.gov/ed/collegescorecard/v1/schools?api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF&_fields=id,school.name,school.state,school.school_url&school.name="+$("#search-term").val().trim();
 
 // ====================================================================================================================================== //
-
 // TESTING API URL SEARCH PARAMETER NOTES:
 //This line will list the universities the user searched that is provided with the school's id and name: In this example, University of Washington is used -->
 // https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF&school.name=University%20of%20Washington&_fields=id,school.name
@@ -17,8 +16,6 @@ function buildQueryURL() {
 // https://api.data.gov/ed/collegescorecard/v1/schools.json?&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF&school.name=NAME%20of%20SCHOOL&_fields=id,school.name
 
 // Refer back to Developer's API Documentation and dictionary of the: dev-category and the developer-friendly-name
-
-
 // ====================================================================================================================================== //
 
     // Begin building an object to contain our API call's query parameters
@@ -44,17 +41,11 @@ function buildQueryURL() {
 
 function updatePage(collegeData) {
 
-    // Log the College to console, where it will show up as an object
-    // console.log(collegeData.results);
-
-    // console.log("------------------------------------");
-
     // Loop through and build elements for the defined number of colleges
     for (var i = 0; i < collegeData.results.length; i++) {
         // Get specific college info for current index
 
         var college = collegeData.results[i];
-        // console.log(college);
 
         // Create the list group to contain the colleges and add the college content for each
         var $collegeList = $("<ul>");
@@ -88,7 +79,7 @@ function updatePage(collegeData) {
         $("#college-section").append($collegeList);
         }
     }
-    // This on-click function saves the user's id info when they click the heart icon.
+    // This on-click function saves the user's id info when they click the heart icon and will transfer the user to the members page.
     $(document).on("click", ".favorite", function() {
         var favID = $(this).attr("data-favID");
         console.log(favID);
@@ -96,11 +87,10 @@ function updatePage(collegeData) {
         $.ajax("/api/favorites/" + favID, {
             type: "PUT",
         }).then(function(addData) {
-            window.location.replace('/')
+            window.location.replace('/');
             // console.log('addData', addData);
         });
     });
-
 
 // Function to empty out the college
 function clear() {

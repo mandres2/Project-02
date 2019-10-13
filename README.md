@@ -98,14 +98,15 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 
 <br>
 
-* <b>Tutors<b> Denis Molloy, Trae Sanks, Matthew Tedder
+* <b>Tutors<b> Denis Molloy, Trae Sanks, Matthew Tedder, Robert Hardin
 
 <br>
 
 * <b>Teacher</b> - Arron Linton
 
+<br>
 
-
+* <b>University of Washington</b> for providing study rooms.
 
 ## Progress Log:
 <br>
@@ -129,9 +130,9 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 <br>
 :heavy_check_mark: 10.11 - Establishing hitting the API data base by hitting the College ID and pulling up the information of college data onto the console then render it onto the HTML page. Upload project to Heroku.
 <br>
-:heavy_check_mark: 10.12 - Debugging uploading project to Heroku. Hitting the College Scorecard API again for that particular member's saved college's ID.
+:heavy_check_mark: 10.12 - Debugging uploading project to Heroku. There were issues with the HTTP_Proxy pathing and had to conduct calibrations prior to Heroku deployment. Established hitting the College Scorecard API again for particular member's saved college's ID (i.e. Out-of-state tuition, in-state tuition).
 <br>
-:heavy_check_mark: 10.13
+:heavy_check_mark: 10.13 - Transitioning to Front-end work and fixing up the members page and adjusting resources page.
 <br>
 :heavy_check_mark: 10.14
 <br>

@@ -37,4 +37,7 @@ $(document).ready(function() {
         console.log(err);
       });
   }
+
+  // Effects:
+  $(".loginContainer").fadeIn("slow");
 });

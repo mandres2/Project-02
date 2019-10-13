@@ -8,42 +8,48 @@ $(document).ready(function() {
 
     var collegeID = data.favCollegeID;
     // This will test out the users' selected college ID
-    console.log(collegeID);
+    // console.log(collegeID);
 
     $(".member-name").text(data.email);
 
     var queryURL = "https://api.data.gov/ed/collegescorecard/v1/schools?id="+collegeID+"&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF";
 
       $.get(queryURL).then(function(collegeData){
-
-        // This is the queryURl that will hit College Scorecard API
+      // This is the queryURl that will hit College Scorecard API
 
       // THIS HERE IS WHERE WE WANT TO HIT THE ID OF THE COLLEGE AND PULL PARTICULAR PIECES OF DATA FROM THAT ID on to here:
-      /*
-      a. Finance/Cost/Tuition/Scholarships
-      b. SATs/ACTs
-      c. Class Size/Graduation rate
-      */
-      // console.log(collegeData);
+
+      // School's name that will be appended to the Welcome Page
+      var uniName = $("<p>").text(collegeData.results[0].school.alias);
+      uniName.addClass("uniNameTitle");
+      $(".display-2").append(uniName);
+
+      console.log(collegeData);
       // console.log used to hit particular query parameters of the api database
       // console.log(collegeData.results[0].latest.cost);
-      console.log(collegeData.results[0].latest.cost.tuition.in_state);
-      console.log(collegeData.results[0].latest.cost.tuition.out_of_state);
+      // console.log(collegeData.results[0].latest.cost.tuition.in_state);
+      // console.log(collegeData.results[0].latest.cost.tuition.out_of_state);
       // console.log(collegeData.results[0].latest.admissions);
       // console.log(collegeData.results[0].latest.aid);
 
       // $(".collegeSearchParams").append("In-State Tuition " + collegeData.results[0].latest.cost.tuition.in_state);
         // \n new line
-      $(".collegeSearchParams").append(" \n <br>" + "Out-of-State Tuition " + collegeData.results[0].latest.cost.tuition.out_of_state);
 
-      var collegeSearchResults = $("<p>").text("In-State Tuition" + collegeData.results[0].latest.cost.tuition.in_state);
+      // College Finances:
+      $(".collegeSearchParams").append(" \n <br>" + "Out-of-State Tuition  $" + collegeData.results[0].latest.cost.tuition.out_of_state);
+
+      var collegeSearchResults = $("<p>").text("In-State Tuition  $" + collegeData.results[0].latest.cost.tuition.in_state);
+      // This class can be used to modify the font
       collegeSearchResults.addClass("inStateTuition");
-
       $(".collegeSearchParams").append(collegeSearchResults);
+
+      // College Admissions
+
+
+      // College Financial Aid
 
       });
     });
-
     // The next objective is to render the saved pieces of data
 });
 
