@@ -2,10 +2,18 @@
 
 .loginForm {
   background-color: #d8f8ff;
+
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
 }
 
 .signupForm {
   background-color: #d8f8ff;
+
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
 }
 
 form.signup,

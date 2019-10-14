@@ -18,8 +18,6 @@ $(document).ready(function() {
       $.get(queryURL).then(function(collegeData){
       // This is the queryURl that will hit College Scorecard API
 
-
-
       // School's name that will be appended to the Welcome Page
       var uniName = $("<p>").text(collegeData.results[0].school.alias);
       uniName.addClass("uniNameTitle");
@@ -33,23 +31,49 @@ $(document).ready(function() {
       // console.log(collegeData.results[0].latest.admissions);
       // console.log(collegeData.results[0].latest.aid);
 
-      // $(".collegeSearchParams").append("In-State Tuition " + collegeData.results[0].latest.cost.tuition.in_state);
-        // \n new line
+      // ================================= College Finances ================================= //
+      //UNIVERSITY FINANCIAL DATA TITLE:
+      $(".collegeSearchParams").append("\n <br> <b>" + "UNIVERSITY FINANCIAL DATA");
+      // Cost for an academic year:
+      $(".collegeSearchParams").append("\n <br>" + "Cost of Attendance (Academic Year):  $" + "<b>" + collegeData.results[0].latest.cost.attendance.academic_year);
+      // Average Net Price Overall:
+      $(".collegeSearchParams").append("\n <br>" + "Average Net Price (Overall):  $" + "<b>" + collegeData.results[0].latest.cost.avg_net_price.overall);
+      // Out-of-State Tuition:
+      $(".collegeSearchParams").append(" \n <br>" + "Out-of-State Tuition:  $" + "<b>" + collegeData.results[0].latest.cost.tuition.out_of_state);
 
-      // College Finances:
+      // In-State Tuition:
+      $(".collegeSearchParams").append(" \n <br>" + "In-State Tuition:  $" + "<b>" + collegeData.results[0].latest.cost.tuition.in_state);
 
 
-      $(".collegeSearchParams").append(" \n <br>" + "Out-of-State Tuition  $" + collegeData.results[0].latest.cost.tuition.out_of_state);
 
-      var collegeSearchResults = $("<p>").text("In-State Tuition  $" + collegeData.results[0].latest.cost.tuition.in_state);
-      // This class can be used to modify the font
+      /* This is an alternative to append a query parameter:
+      var collegeSearchResults = $("<p>").text("In-State Tuition:  $" + collegeData.results[0].latest.cost.tuition.in_state);
+      // Note: this class can be used to modify the font
       collegeSearchResults.addClass("inStateTuition");
       $(".collegeSearchParams").append(collegeSearchResults);
+        */
 
-      // College Admissions
+      $(".collegeSearchParams").append("\n <br>");
 
 
-      // College Financial Aid
+      // ================================= College Admissions ================================= //
+      //COLLEGE/UNIVERSITY ADMISSIONS TITLE:
+      $(".collegeSearchParams").append("\n <br> <b>" + "COLLEGE/UNIVERSITY ADMISSIONS");
+      // school ID:
+      $(".collegeSearchParams").append("\n <br>" + "University ID :  " + "<b>" + collegeData.results[0].id);
+      // Admission Rate:
+      var originalValue = [collegeData.results[0].latest.admissions.admission_rate.overall];
+      var convertValue = originalValue.map(function(item) {
+      return ((item) * 100) + '%';
+      });
+      $(".collegeSearchParams").append("\n <br>" + "Overall Admission Rate :  " + "<b>" + convertValue);
+
+
+
+
+
+
+      // Financial Aid
 
       });
 

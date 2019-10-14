@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $('.loginContainer').fadeIn("slow");
   // Getting references to our form and inputs
   var loginForm = $("form.login");
   var emailInput = $("input#email-input");
@@ -37,7 +38,4 @@ $(document).ready(function() {
         console.log(err);
       });
   }
-
-  // Effects:
-  $(".loginContainer").fadeIn("slow");
 });
