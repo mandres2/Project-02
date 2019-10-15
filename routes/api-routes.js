@@ -9,7 +9,6 @@ module.exports = function (app) {
   //Refer back if error/bugs app.post("/api/login", passport.authenticate("local"),
 
 
-
   app.post("/api/chooseCollege", passport.authenticate("local"), function (req, res) {
     res.json("/chooseCollege");
   });

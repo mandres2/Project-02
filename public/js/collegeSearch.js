@@ -79,10 +79,13 @@ function updatePage(collegeData) {
         $("#college-section").append($collegeList);
         }
     }
+
+
     // This on-click function saves the user's id info when they click the heart icon and will transfer the user to the members page.
     $(document).on("click", ".favorite", function() {
         var favID = $(this).attr("data-favID");
         console.log(favID);
+
         //=============== PUT Request Placed here: ====================//
         $.ajax("/api/favorites/" + favID, {
             type: "PUT",
@@ -110,7 +113,7 @@ $("#run-search").on("click", function (event) {
     // Empty the region associated with the colleges
     clear();
 
-    // Build the query URL for the ajax request to the NYT API
+    // Build the query URL for the ajax request to the API
     var queryURL = buildQueryURL();
 
      // Make the AJAX request to the API - GETs the JSON data at the queryURL.
