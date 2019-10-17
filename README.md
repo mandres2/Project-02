@@ -1,9 +1,12 @@
-# Project-02 "Name of Full-Stack Application"
+# Project-02 "college.leap"
 
-# Name of Application
-What does it do?
+# college.leap
 
-![alt text]()
+![alt text](https://cdn.dribbble.com/users/1177948/screenshots/4338165/campfire.gif)
+
+<h3>What does it do?</h3>
+
+college.leap was programmed to help alleviate the stress of a highschool student as they begin their preparation and transition to a college setting. Think of this page as a campfire site in a Role Playing Game where the player, (AKA 'the student') can pause, rest/save their "game" as they continue their "journey" to college. The resources from this app provides all the tools for the user to prepare for their exams as well as giving students preparation for their application essays and interviews.
 
 ## Motive:
 As a Full Stack Developer, the primary motive was to build an application by utilizing an ORM methodology and establishing a MVC framework. Exerting these types of practices provides an organized/clean environment and allows other developers to maneuver around the code with ease.
@@ -28,7 +31,6 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 <br>
 :black_small_square: JawsDB MySQL - free Heroku add-on application that gives access to a fully-functional MySQL database with no barriers or hoops to jump through.
 :black_small_square: Sequelize - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
-
 
 
 ## Code Explanation:
@@ -69,9 +71,9 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 <br>
 :black_small_square: ShareX v12.4.1 - Screen Record User Functionality and converts to GIFs
 <br>
-:black_small_square: Adobe XD - Create blue-print for HTML layout.
+:black_small_square: Adobe XD - Created wireframe for HTML layout.
 <br>
-:black_small_square: Pexels - Free stock photos
+:black_small_square: Adobe After-Effects - Edit GIfs
 
 ## npm Packages Used:
 
@@ -93,7 +95,7 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 
 <b>This project is licensed under the MIT License</b>
 
-## Acknowledgments
+## Acknowledgments & Support
 * <b>TAs</b> - Catherine Pham, Benjamin Vaagen
 
 <br>

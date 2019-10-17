@@ -42,7 +42,8 @@ $(document).ready(function() {
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    $("#alert .msg").text("Error with User Credentials");
+    // $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
 });
