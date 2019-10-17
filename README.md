@@ -45,10 +45,15 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 
 ## How To Use The Application:
 
+<h2>college.leap signup</h2>
 
-![alt text]()
+![alt text](https://github.com/mandres2/Project-02/blob/master/public/assets/img/college.leap_signup.gif?raw=true)
 
-![alt text]()
+<br>
+
+<h2>college.leap sign-in tour</h2>
+
+![alt text](https://github.com/mandres2/Project-02/blob/master/public/assets/img/college.leap%20login_tour.gif?raw=true)
 
 
 ## Deployment
@@ -100,7 +105,7 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 
 <br>
 
-* <b>Tutors<b> Denis Molloy, Trae Sanks, Matthew Tedder, Robert Hardin
+* <b>Tutors</b> - Denis Molloy, Trae Shanks, Matthew Tedder, Robert Hardin
 
 <br>
 
@@ -112,8 +117,8 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 
 ## Progress Log:
 <br>
+
 :heavy_check_mark: 9.30 - Reviewed requirements. Obtain project proposal approval from staff. Established repository, files/folders, and began markdown on README.md.
-<br>
 :heavy_check_mark: 10.01-10.03 - Began researching extra APIs, as well as working on establishing data-base structures, revised markdown.
 <br>
 :heavy_check_mark: 10.04 - Set-up and fix MySQL Databases & API routes.
