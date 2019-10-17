@@ -4,7 +4,7 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 
-// Setup access to custom environmental var
+// Setup access to custom environmental variable
 require("dotenv").config();
 
 // Setting up port and requiring models for syncing
