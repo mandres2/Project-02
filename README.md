@@ -134,14 +134,14 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 <br>
 :heavy_check_mark: 10.13 - Transitioning to Front-end work and fixing up the members page and adjusting resources page.
 <br>
-:heavy_check_mark: 10.14
+:heavy_check_mark: 10.14 - Appending College Data to Members Page. Deployed Application to Heroku.
 <br>
-:heavy_check_mark: 10.15
+:heavy_check_mark: 10.15 - Adding Resources. Working on Front-end content.
 <br>
-:heavy_check_mark: 10.16
+:heavy_check_mark: 10.16 - Adding Resources. Working on Front-end polishing app.
 <br>
-:heavy_check_mark: 10.17
+:heavy_check_mark: 10.17 - Start Powerpoint.
 <br>
-:heavy_check_mark: 10.18
+:heavy_check_mark: 10.18 - Polishing Application. Work on Powerpoint.
 <br>
-:heavy_check_mark: 10.19
+:heavy_check_mark: 10.19 - Deploying Final Application

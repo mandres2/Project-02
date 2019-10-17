@@ -109,7 +109,7 @@ ul li:hover {
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
   background: #888;
-  color: #fff;
+  color: black;
   text-decoration: line-through;
 }
 
@@ -164,6 +164,7 @@ input {
   padding: 10px;
   float: left;
   font-size: 16px;
+  color: black;
 }
 
 /* Style the "Add" button */
