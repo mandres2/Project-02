@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // small effect for the sign up container
   $(".signUpContainer").hide();
   $(".signUpContainer").fadeIn(1500);
   // Getting references to our form and input

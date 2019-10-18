@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // Small effect for the login container
   $(".loginContainer").hide();
   $(".loginContainer").fadeIn(1500);
   // Getting references to our form and inputs
