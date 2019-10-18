@@ -1,9 +1,12 @@
-# Project-02 "Name of Full-Stack Application"
+# Project-02 "college.leap"
 
-# Name of Application
-What does it do?
+# college.leap
 
-![alt text]()
+![alt text](https://cdn.dribbble.com/users/1177948/screenshots/4338165/campfire.gif)
+
+<h3>What does it do?</h3>
+
+college.leap was programmed to help alleviate the stress of a highschool student as they begin their preparation and transition to a college setting. Think of this page as a campfire site in a Role Playing Game where the player, (AKA 'the student') can pause, rest/save their "game" as they continue their "journey" to college. The resources from this app provides all the tools for the user to prepare for their exams as well as giving students preparation for their application essays and interviews.
 
 ## Motive:
 As a Full Stack Developer, the primary motive was to build an application by utilizing an ORM methodology and establishing a MVC framework. Exerting these types of practices provides an organized/clean environment and allows other developers to maneuver around the code with ease.
@@ -30,7 +33,6 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 :black_small_square: Sequelize - Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.
 
 
-
 ## Code Explanation:
 * The way the code was written out was utilizing ORM (Object-Relational Mapping), while establishing an MVC (Model-View-Controller) framework.
   1. 'server.js' that contains the npm packages for express, body-parser, and path. The server.js sets up the app(instance of express) as well as setting up handlebars, and import the routes.
@@ -43,10 +45,15 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 
 ## How To Use The Application:
 
+<h2>college.leap signup</h2>
 
-![alt text]()
+![alt text](https://github.com/mandres2/Project-02/blob/master/public/assets/img/college.leap_signup.gif?raw=true)
 
-![alt text]()
+<br>
+
+<h2>college.leap sign-in tour</h2>
+
+![alt text](https://github.com/mandres2/Project-02/blob/master/public/assets/img/college.leap%20login_tour.gif?raw=true)
 
 
 ## Deployment
@@ -69,9 +76,9 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 <br>
 :black_small_square: ShareX v12.4.1 - Screen Record User Functionality and converts to GIFs
 <br>
-:black_small_square: Adobe XD - Create blue-print for HTML layout.
+:black_small_square: Adobe XD - Created wireframe for HTML layout.
 <br>
-:black_small_square: Pexels - Free stock photos
+:black_small_square: Adobe After-Effects - Edit GIfs
 
 ## npm Packages Used:
 
@@ -93,12 +100,12 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 
 <b>This project is licensed under the MIT License</b>
 
-## Acknowledgments
+## Acknowledgments & Support
 * <b>TAs</b> - Catherine Pham, Benjamin Vaagen
 
 <br>
 
-* <b>Tutors<b> Denis Molloy, Trae Sanks, Matthew Tedder, Robert Hardin
+* <b>Tutors</b> - Denis Molloy, Trae Shanks, Matthew Tedder, Robert Hardin
 
 <br>
 
@@ -110,8 +117,8 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 
 ## Progress Log:
 <br>
+
 :heavy_check_mark: 9.30 - Reviewed requirements. Obtain project proposal approval from staff. Established repository, files/folders, and began markdown on README.md.
-<br>
 :heavy_check_mark: 10.01-10.03 - Began researching extra APIs, as well as working on establishing data-base structures, revised markdown.
 <br>
 :heavy_check_mark: 10.04 - Set-up and fix MySQL Databases & API routes.
@@ -134,14 +141,14 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 <br>
 :heavy_check_mark: 10.13 - Transitioning to Front-end work and fixing up the members page and adjusting resources page.
 <br>
-:heavy_check_mark: 10.14
+:heavy_check_mark: 10.14 - Appending College Data to Members Page. Deployed Application to Heroku.
 <br>
-:heavy_check_mark: 10.15
+:heavy_check_mark: 10.15 - Adding Resources. Working on Front-end content.
 <br>
-:heavy_check_mark: 10.16
+:heavy_check_mark: 10.16 - Adding Resources. Working on Front-end polishing app.
 <br>
-:heavy_check_mark: 10.17
+:heavy_check_mark: 10.17 - Start Powerpoint.
 <br>
-:heavy_check_mark: 10.18
+:heavy_check_mark: 10.18 - Polishing Application. Work on Powerpoint.
 <br>
-:heavy_check_mark: 10.19
+:heavy_check_mark: 10.19 - Final touches & Deploying Final Application. 

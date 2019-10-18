@@ -6,9 +6,6 @@ $(document).ready(function() {
     // I have access of the college ID. I need to pass that ID into the API Call. Read the JSON object, and only grab what you need.
     // log in the information in the back-end. worry about the rendering process later.
 
-    console.log("membersjs get user data api endpoint hit")
-
-    console.log("get user data:", data);
     var collegeID = data.favCollegeID;
     // This will test out the users' selected college ID
     // console.log(collegeID);
@@ -26,14 +23,6 @@ $(document).ready(function() {
       var uniName = $("<p>").text(collegeData.results[0].school.alias);
       uniName.addClass("uniNameTitle");
       $(".display-2").append(uniName);
-
-      console.log(collegeData);
-      // console.log used to hit particular query parameters of the api database
-      // console.log(collegeData.results[0].latest.cost);
-      // console.log(collegeData.results[0].latest.cost.tuition.in_state);
-      // console.log(collegeData.results[0].latest.cost.tuition.out_of_state);
-      // console.log(collegeData.results[0].latest.admissions);
-      // console.log(collegeData.results[0].latest.aid);
 
       // ================================= College Finances ================================= //
       //UNIVERSITY FINANCIAL DATA TITLE:
@@ -118,21 +107,13 @@ $(document).ready(function() {
 
       $(".collegeSearchParams").append("\n <br>");
 
-
-      // ================================= Financial Aid ================================= //
-
-
-
-
-
-
-
-      // Financial Aid
-
       });
 
     });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8dfd1f2d9c3b6e9c2a585d0bb37cd6a8893a85d7
 });
 
     // The next objective is to render the saved pieces of data
