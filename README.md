@@ -151,4 +151,4 @@ As a Full Stack Developer, the primary motive was to build an application by uti
 <br>
 :heavy_check_mark: 10.18 - Polishing Application. Work on Powerpoint.
 <br>
-:heavy_check_mark: 10.19 - Final touches & Deploying Final Application. 
+:heavy_check_mark: 10.19 - Final touches & Deploying Final Application.

@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $(".signUpContainer").hide();
+  $(".signUpContainer").fadeIn(1500);
   // Getting references to our form and input
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
