@@ -3,7 +3,6 @@ $(document).ready(function() {
   // and updates the HTML on the page
 
   $.get("/api/user_data").then(function(data) {
-    console.log("USER DATA members.js:", data);
     // I have access of the college ID. I need to pass that ID into the API Call. Read the JSON object, and only grab what you need.
     // log in the information in the back-end. worry about the rendering process later.
 

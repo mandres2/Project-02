@@ -32,7 +32,7 @@ $(document).ready(function() {
       .then(function(data) {
         console.log(data);
         // This is line of code is where it will redirect the first-time user.
-        location.href = "/login";
+        window.location.replace("/chooseCollege");
         // console.log(data);
         // window.location.replace(data);
 

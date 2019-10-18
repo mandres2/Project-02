@@ -29,9 +29,9 @@ module.exports = function (app) {
         email: req.body.email,
         password: req.body.password
       })
-      // Redirection to login on successful creation of an account.
+      // Redirection on successful creation of an account.
       .then(function () {
-        console.log("successfully created new user");
+        console.log("testing");
         res.redirect(307, "/login");
       })
       // Recap: The catch() method returns a Promise and deals with rejected cases only.

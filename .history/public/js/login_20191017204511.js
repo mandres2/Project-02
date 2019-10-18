@@ -33,7 +33,7 @@ $(document).ready(function() {
       .then(function(data) {
         console.log(data)
 		// If there's an error, log the error
-		location.href = "/chooseCollege";
+		location.href("/chooseCollege");
       })
       .catch(function(err) {
         console.log(err);

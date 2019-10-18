@@ -93,7 +93,6 @@ function updatePage(collegeData) {
             data: {favCollegeID: favID}
         }).then(function(addData) {
             console.log(addData);
-            location.href = "/members";
             // window.location("/members");
             // console.log('addData', addData);
         });

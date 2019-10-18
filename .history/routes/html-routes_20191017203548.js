@@ -11,7 +11,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     } else {
-      res.sendFile(path.join(__dirname, "../public/login.html"));
+      res.redirect("/login");
     }
   });
 

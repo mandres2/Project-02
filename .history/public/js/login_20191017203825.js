@@ -32,8 +32,7 @@ $(document).ready(function() {
     })
       .then(function(data) {
         console.log(data)
-		// If there's an error, log the error
-		location.href = "/chooseCollege";
+        // If there's an error, log the error
       })
       .catch(function(err) {
         console.log(err);

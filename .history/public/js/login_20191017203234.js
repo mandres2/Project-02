@@ -14,8 +14,7 @@ $(document).ready(function() {
     };
 
     if (!userData.email || !userData.password) {
-	// TODO: you should probably have some sort of alert here so the user knows what the error is
-	  return;
+      return;
     }
 
     // If we have an email and password we run the loginUser function and clear the form
@@ -32,8 +31,8 @@ $(document).ready(function() {
     })
       .then(function(data) {
         console.log(data)
-		// If there's an error, log the error
-		location.href = "/chooseCollege";
+        window.location("/chooseCollege");
+        // If there's an error, log the error
       })
       .catch(function(err) {
         console.log(err);

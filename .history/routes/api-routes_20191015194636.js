@@ -14,9 +14,6 @@ module.exports = function (app) {
   // });
 
   // This piece of code is to connect the login for the user to the welcome/home page.
-
-  // TODO: you need to separate your auth stuff into a separate file
-
   app.post("/auth/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
@@ -29,10 +26,10 @@ module.exports = function (app) {
         email: req.body.email,
         password: req.body.password
       })
-      // Redirection to login on successful creation of an account.
+      // Redirection on successful creation of an account.
       .then(function () {
-        console.log("successfully created new user");
-        res.redirect(307, "/login");
+        console.log("testing");
+        res.redirect(307, "/api/chooseCollege");
       })
       // Recap: The catch() method returns a Promise and deals with rejected cases only.
       .catch(function (err) {

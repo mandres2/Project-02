@@ -11,7 +11,7 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     } else {
-      res.sendFile(path.join(__dirname, "../public/login.html"));
+      res.redirect("/login");
     }
   });
 
@@ -24,11 +24,11 @@ module.exports = function(app) {
   });
 
 // Routing to chooseCollege.html
-  app.get("/chooseCollege", isAuthenticated, function(req, res) {
+  app.get("/chooseCollege", function(req, res) {
     // If this is the first time the user signs up redirect them to the chooseCollege page
-    // if (!req.user) {
-    // res.redirect("/login");
-    // }
+    if (!req.user) {
+    res.redirect("/login");
+    }
     // console.log("chooseCollege");
     res.sendFile(path.join(__dirname, "../public/chooseCollege.html"));
   });
@@ -40,19 +40,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
-  app.get("/about", function(req, res) {
+  app.get("/about", isAuthenticated, function(req, res) {
     console.log('REQ.USER: ', req.user)
-    res.sendFile(path.join(__dirname, "../public/about.html"));
-  });
-
-  app.get("/resources", function(req, res) {
-    console.log('REQ.USER: ', req.user)
-    res.sendFile(path.join(__dirname, "../public/resources.html"));
-  });
-
-  app.get("/signup", function(req, res) {
-    console.log('REQ.USER: ', req.user)
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
 
