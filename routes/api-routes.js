@@ -9,19 +9,19 @@ module.exports = function (app) {
   //Refer back if error/bugs app.post("/api/login", passport.authenticate("local"),
 
 
-  app.post("/api/chooseCollege", passport.authenticate("local"), function (req, res) {
-    res.json("/chooseCollege");
-  });
+  // app.post("/api/chooseCollege", passport.authenticate("local"), function (req, res) {
+  //   res.json("/chooseCollege");
+  // });
 
   // This piece of code is to connect the login for the user to the welcome/home page.
-  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+  app.post("/auth/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", function (req, res) {
+  app.post("/api/user_data", function (req, res) {
     db.user.create({
         email: req.body.email,
         password: req.body.password
@@ -53,9 +53,9 @@ module.exports = function (app) {
 
   // Route 3 (PUT): UPDATE
   // What this route does is that if the user has made a decision of their favorite/targeted college, the user will click the heart icon. Upon the click of the heart icon it will save the college's ID to MySQL and update the column. Upon
-  app.put("/api/favorites/:id", function (req, res) {
-    console.log('/api/favorites/:id triggered');
-    var favoriteID = parseInt(req.params.id);
+  app.put("/api/user_data", function (req, res) {
+    // console.log('/api/favorites/:id triggered');
+    var favoriteID = parseInt(req.body.favCollegeID);
     var userID = req.user.id;
     console.log({
     favoriteID,
@@ -64,7 +64,7 @@ module.exports = function (app) {
 
     // This function will execute once the user hits the heart button and it will save the API data and eventually the data will be routed towards the member homepage.
     db.user.update({
-        favCollegeID: favoriteID
+      favCollegeID: favoriteID
       }, {
         where: {
           id: userID
@@ -76,7 +76,7 @@ module.exports = function (app) {
         console.log('db.user.update .then');
         // Establish a redirection of the user from college search to members page.
         console.log('college id', data);
-        res.json(true);
+        res.json(data);
       })
       .catch(function (err) {
         res.json(err);

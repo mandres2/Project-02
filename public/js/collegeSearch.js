@@ -84,13 +84,16 @@ function updatePage(collegeData) {
     // This on-click function saves the user's id info when they click the heart icon and will transfer the user to the members page.
     $(document).on("click", ".favorite", function() {
         var favID = $(this).attr("data-favID");
-        console.log(favID);
+        console.log("fave:", favID);
 
         //=============== PUT Request Placed here: ====================//
-        $.ajax("/api/favorites/" + favID, {
+        $.ajax({
+            url: "/api/user_data/",
             type: "PUT",
+            data: {favCollegeID: favID}
         }).then(function(addData) {
-            window.location.replace('/');
+            console.log(addData);
+            // window.location("/members");
             // console.log('addData', addData);
         });
     });
