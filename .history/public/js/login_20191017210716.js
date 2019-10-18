@@ -25,15 +25,13 @@ $(document).ready(function() {
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-  function loginUser(userData) {
-    $.ajax({
-		url: "/auth/login",
-		data: userData,
-		type: "POST"
-	})
+  function loginUser(email, password) {
+    $.post("/auth/login", {
+      email: email,
+      password: password
+    })
       .then(function(data) {
-		console.log(data);
-		location.href = "/members";
+        console.log(data);
 		// If there's an error, log the error
       })
       .catch(function(err) {

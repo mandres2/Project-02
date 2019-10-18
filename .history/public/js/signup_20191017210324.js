@@ -19,7 +19,7 @@ $(document).ready(function() {
       data: userData,
       type: "POST"
     }).then(function(data) {
-        // console.log(data);
+        console.log(data);
         // This is line of code is where it will redirect the first-time user.
         location.href = "/login";
         // console.log(data);

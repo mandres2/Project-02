@@ -10,7 +10,7 @@ $(document).ready(function() {
     $("#alert").fadeIn(500);
   }
 
-    // Does a post to the signup route. If successful, redirect to the 'login' page
+    // Does a post to the signup route. If successful, redirect to the 'College Search' page
   // Otherwise we log any errors
   function signUpUser(userData) {
     // console.log({email, password});
@@ -19,7 +19,7 @@ $(document).ready(function() {
       data: userData,
       type: "POST"
     }).then(function(data) {
-        // console.log(data);
+        console.log(data);
         // This is line of code is where it will redirect the first-time user.
         location.href = "/login";
         // console.log(data);
