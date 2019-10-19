@@ -32,7 +32,7 @@ $(document).ready(function() {
       password: password
     })
       .then(function(data) {
-        console.log(data)
+        console.log(data);
         window.location.replace("/members");
         // If there's an error, log the error
       })
