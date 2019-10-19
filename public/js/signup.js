@@ -7,6 +7,36 @@ $(document).ready(function() {
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
 
+  function handleLoginErr(err) {
+    // $("#alert .msg").text("Error with User Credentials");
+    $("#alert .msg").text(JSON.stringify(err));
+    $("#alert").fadeIn(500);
+  }
+
+    // Does a post to the signup route. If successful, redirect to the 'login' page
+  // Otherwise we log any errors
+  function signUpUser(userData) {
+    // console.log("userData:", userData);
+    $.ajax({
+      url: "/api/user_data",
+      data: userData,
+      type: "POST"
+    }).then(function(result) {
+        // console.log(result);
+        emailInput.val("");
+        passwordInput.val("");
+        // This is line of code is where it will redirect the first-time user.
+        location.href = "/login";
+
+    
+        // If there's an error, handle it by throwing up a bootstrap alert
+      })
+      .catch(function(err) {
+        handleLoginErr(err);
+      });
+  }
+
+
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
@@ -16,37 +46,11 @@ $(document).ready(function() {
     };
 
     if (!userData.email || !userData.password) {
+      // TODO: need an error message for the user here
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password);
-    emailInput.val("");
-    passwordInput.val("");
+    signUpUser(userData);
   });
 
-  // Does a post to the signup route. If successful, redirect to the 'College Search' page
-  // Otherwise we log any errors
-  function signUpUser(email, password) {
-    console.log({email, password});
-    $.post("/api/signup", {
-      email: email,
-      password: password
-    })
-      .then(function(data) {
-        console.log(data);
-        // This is line of code is where it will redirect the first-time user.
-        window.location.replace("/chooseCollege");
-        // console.log(data);
-        // window.location.replace(data);
-
-        // If there's an error, handle it by throwing up a bootstrap alert
-      })
-      .catch(handleLoginErr);
-  }
-
-  function handleLoginErr(err) {
-    $("#alert .msg").text("Error with User Credentials");
-    // $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
-  }
 });

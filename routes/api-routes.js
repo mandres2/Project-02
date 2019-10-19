@@ -9,31 +9,37 @@ module.exports = function (app) {
   //Refer back if error/bugs app.post("/api/login", passport.authenticate("local"),
 
 
-  app.post("/api/chooseCollege", passport.authenticate("local"), function (req, res) {
-    res.json("/chooseCollege");
-  });
+  // app.post("/api/chooseCollege", passport.authenticate("local"), function (req, res) {
+  //   res.json("/chooseCollege");
+  // });
 
   // This piece of code is to connect the login for the user to the welcome/home page.
-  app.post("/api/login", passport.authenticate("local"), function (req, res) {
+
+  // TODO: you need to separate your auth stuff into a separate file
+
+  app.post("/auth/login", passport.authenticate("local"), function (req, res) {
+    // console.log("back end auth/login route");
     res.json(req.user);
+    // res.redirect("/chooseCollege");
+
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/signup", function (req, res) {
-    db.user.create({
+  app.post("/api/user_data", function (req, res) {
+    db.Users.create({
         email: req.body.email,
         password: req.body.password
       })
-      // Redirection on successful creation of an account.
-      .then(function () {
-        console.log("testing");
-        res.redirect(307, "/api/chooseCollege");
+      // Redirection to login on successful creation of an account.
+      .then(function (result) {
+        res.redirect("/login");
       })
       // Recap: The catch() method returns a Promise and deals with rejected cases only.
       .catch(function (err) {
-        res.status(401).json(err);
+        if (err) throw err;
+        // res.status(401).json(err);
       });
   });
 
@@ -53,18 +59,16 @@ module.exports = function (app) {
 
   // Route 3 (PUT): UPDATE
   // What this route does is that if the user has made a decision of their favorite/targeted college, the user will click the heart icon. Upon the click of the heart icon it will save the college's ID to MySQL and update the column. Upon
-  app.put("/api/favorites/:id", function (req, res) {
-    console.log('/api/favorites/:id triggered');
-    var favoriteID = parseInt(req.params.id);
+  app.put("/api/user_data", function (req, res) {
+    // console.log('/api/favorites/:id triggered');
+    console.log("put api user data req.body", req.body.favCollegeID);
+    console.log("put api user data req.user.id", req.user.id);
+    var favoriteID = parseInt(req.body.favCollegeID);
     var userID = req.user.id;
-    console.log({
-    favoriteID,
-    userID
-    });
 
     // This function will execute once the user hits the heart button and it will save the API data and eventually the data will be routed towards the member homepage.
-    db.user.update({
-        favCollegeID: favoriteID
+    db.Users.update({
+      favCollegeID: favoriteID
       }, {
         where: {
           id: userID
@@ -73,10 +77,9 @@ module.exports = function (app) {
       })
       // Redirection on selecting college.
       .then(function (data) {
-        console.log('db.user.update .then');
-        // Establish a redirection of the user from college search to members page.
-        console.log('college id', data);
-        res.json(true);
+        console.log("updated data backend", data)
+        // res.json(data);
+        // res.redirect("/members");
       })
       .catch(function (err) {
         res.json(err);
