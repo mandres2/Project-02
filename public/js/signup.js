@@ -16,19 +16,18 @@ $(document).ready(function() {
     // Does a post to the signup route. If successful, redirect to the 'login' page
   // Otherwise we log any errors
   function signUpUser(userData) {
-    // console.log("userData:", userData);
+    // console.log({email, password});
     $.ajax({
       url: "/api/user_data",
       data: userData,
       type: "POST"
-    }).then(function(result) {
-        // console.log(result);
-        emailInput.val("");
-        passwordInput.val("");
+    }).then(function(data) {
+        // console.log(data);
         // This is line of code is where it will redirect the first-time user.
         location.href = "/login";
+        // console.log(data);
+        // window.location.replace(data);
 
-    
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(function(err) {
@@ -51,6 +50,8 @@ $(document).ready(function() {
     }
     // If we have an email and password, run the signUpUser function
     signUpUser(userData);
+    emailInput.val("");
+    passwordInput.val("");
   });
 
 });

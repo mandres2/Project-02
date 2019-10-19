@@ -45,7 +45,7 @@ function updatePage(collegeData) {
     for (var i = 0; i < collegeData.results.length; i++) {
         // Get specific college info for current index
 
-        // var college = collegeData.results[i];
+        var college = collegeData.results[i];
 
         // Create the list group to contain the colleges and add the college content for each
         var $collegeList = $("<ul>");
@@ -54,17 +54,17 @@ function updatePage(collegeData) {
         // This is the college search parameters that will append to $collegeList
 
         // University's ID
-        // var collegeID = college.id;
-        // // Testing variable to see if the data from the object
-        // console.log(collegeID);
+        var collegeID = college.id;
+        // Testing variable to see if the data from the object
+        console.log(collegeID);
 
-        // // University's Name
-        // var collegeName = college["school.name"];
-        // console.log(collegeName);
+        // University's Name
+        var collegeName = college["school.name"];
+        console.log(collegeName);
 
-        // // University's URL
-        // var collegeURL = college["school.school_url"];
-        // console.log(collegeURL);
+        // University's URL
+        var collegeURL = college["school.school_url"];
+        console.log(collegeURL);
 
         var $collegeListItem = $("<li class='list-group-item collegeGroups'>");
 
@@ -84,16 +84,18 @@ function updatePage(collegeData) {
     // This on-click function saves the user's id info when they click the heart icon and will transfer the user to the members page.
     $(document).on("click", ".favorite", function() {
         var favID = $(this).attr("data-favID");
+        console.log("fave:", favID);
 
         //=============== PUT Request Placed here: ====================//
         $.ajax({
-            url: "/api/user_data",
+            url: "/api/user_data/",
             type: "PUT",
             data: {favCollegeID: favID}
-        }).then(function(updatedData) {
-            console.log(updatedData)
-            alert("updated college data:", updatedData)
+        }).then(function(addData) {
+            console.log(addData);
             location.href = "/members";
+            // window.location("/members");
+            // console.log('addData', addData);
         });
     });
 
