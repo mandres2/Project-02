@@ -16,25 +16,27 @@ $(document).ready(function() {
     };
 
     if (!userData.email || !userData.password) {
-      return;
+	// TODO: you should probably have some sort of alert here so the user knows what the error is
+	  return;
     }
 
     // If we have an email and password we run the loginUser function and clear the form
-    loginUser(userData.email, userData.password);
+    loginUser(userData);
     emailInput.val("");
     passwordInput.val("");
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
-  function loginUser(email, password) {
-    $.post("/api/login", {
-      email: email,
-      password: password
-    })
+  function loginUser(userData) {
+    $.ajax({
+		url: "/auth/login",
+		data: userData,
+		type: "POST"
+	})
       .then(function(data) {
-        console.log(data)
-        window.location.replace("/members");
-        // If there's an error, log the error
+		console.log(data);
+		location.href = "/members";
+		// If there's an error, log the error
       })
       .catch(function(err) {
         console.log(err);
