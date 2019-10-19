@@ -2,7 +2,7 @@
 var bcrypt = require("bcryptjs");
 // Creating our User model
 module.exports = function(sequelize, DataTypes) {
-  var user = sequelize.define("user", {
+  var User = sequelize.define("Users", {
     // The email cannot be null, and must be a proper email before creation
     email: {
       type: DataTypes.STRING,
@@ -23,22 +23,22 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
-  user.prototype.validPassword = function(password) {
+  User.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
   };
 
-  user.associate = function (models) {
+  User.associate = function (models) {
     // We're saying that a Post should belong to a *college/user?
     // A Post can't be created without an college due to the foreign key constraint
-    user.hasMany(models.college, {
+    User.hasMany(models.Colleges, {
         onDelete: "cascade"
       });
 };
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
   // In this case, before a User is created, we will automatically hash their password
-  user.addHook("beforeCreate", function(user) {
-    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+  User.addHook("beforeCreate", function(User) {
+    User.password = bcrypt.hashSync(User.password, bcrypt.genSaltSync(10), null);
   });
 
-  return user;
+  return User;
 };

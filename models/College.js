@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var college = sequelize.define("college", {
+    var College = sequelize.define("Colleges", {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -14,13 +14,13 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    college.associate = function (models) {
+    College.associate = function (models) {
         // We're saying that a Post should belong to an user
         // A Post can't be created without an user due to the foreign key constraint
-        college.belongsTo(models.user, {
+        College.belongsTo(models.Users, {
             onDelete: "cascade"
         });
     };
 
-    return college;
+    return College;
 };

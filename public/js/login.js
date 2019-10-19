@@ -34,12 +34,11 @@ $(document).ready(function() {
 		type: "POST"
 	})
       .then(function(data) {
-		console.log(data);
-		location.href = "/members";
+		location.href = "/chooseCollege";
 		// If there's an error, log the error
       })
       .catch(function(err) {
-        console.log(err);
+        if(err) throw err;
       });
   }
 });

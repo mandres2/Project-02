@@ -8,7 +8,7 @@ var passport = require("./config/passport");
 require("dotenv").config();
 
 // Setting up port and requiring models for syncing
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 4000;
 var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
@@ -26,7 +26,7 @@ require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
 // Syncing our database, and then starting the Express app. Upon initiation log a message to the user upon success.
-db.sequelize.sync().then(function() {
+db.sequelize.sync({force: false}).then(function() {
   app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
