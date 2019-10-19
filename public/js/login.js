@@ -1,5 +1,7 @@
 $(document).ready(function() {
-  $('.loginContainer').fadeIn("slow");
+  // Small effect for the login container
+  $(".loginContainer").hide();
+  $(".loginContainer").fadeIn(1500);
   // Getting references to our form and inputs
   var loginForm = $("form.login");
   var emailInput = $("input#email-input");
