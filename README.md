@@ -1,6 +1,11 @@
 # Project-02 "college.leap"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+# college.leap
+
+>>>>>>> parent of 3caf2e1... 2231 1017 ppt modified
 ![alt text](https://github.com/mandres2/Project-02/blob/master/public/assets/img/camp.gif?raw=true)
 =======
 # college.leap
@@ -42,10 +47,9 @@ As a Full Stack Developer, the primary motive was to build an application by uti
   1. 'server.js' that contains the npm packages for express, body-parser, and path. The server.js sets up the app(instance of express) as well as setting up handlebars, and import the routes.
   2. The 'db' folder contains the MySQL data which is primarily... x
   3. The 'public' folder contains primarily the front-end code. It also contains the CSS styling for the web page as well. The folder contains the images/screenshots used in the application.
-  4. routes - contain the api and html routes that guide the user through the application.
-  5. The 'views' folder contains all of Handlebar's code.
-  6. 'controllers' folder contains has the update function
-  7. 'config' folder contains the connections and orm model for the application.
+  4. The 'views' folder contains all of Handlebar's code.
+  5. 'controllers' folder contains has the update function
+  6. 'config' folder contains the connections and orm model for the application.
 
 
 ## How To Use The Application:
