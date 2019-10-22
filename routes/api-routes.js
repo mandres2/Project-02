@@ -58,8 +58,8 @@ module.exports = function (app) {
   // What this route does is that if the user has made a decision of their favorite/targeted college, the user will click the heart icon. Upon the click of the heart icon it will save the college's ID to MySQL and update the column. Upon
   app.put("/api/user_data", function (req, res) {
     // console.log('/api/favorites/:id triggered');
-    console.log("put api user data req.body", req.body.favCollegeID);
-    console.log("put api user data req.user.id", req.user.id);
+    // console.log("put api user data req.body", req.body.favCollegeID);
+    // console.log("put api user data req.user.id", req.user.id);
     var favoriteID = parseInt(req.body.favCollegeID);
     var userID = req.user.id;
 
@@ -74,7 +74,7 @@ module.exports = function (app) {
       })
       // Redirection on selecting college.
       .then(function (data) {
-        console.log("updated data backend", data);
+        // console.log("updated data backend", data);
         res.json(data);
         // res.redirect("/members");
       })
