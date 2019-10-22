@@ -1,24 +1,8 @@
-# Project-02 "college.leap"
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-# college.leap
-
->>>>>>> parent of 3caf2e1... 2231 1017 ppt modified
-=======
-# college.leap
-
->>>>>>> parent of 3caf2e1... 2231 1017 ppt modified
-![alt text](https://github.com/mandres2/Project-02/blob/master/public/assets/img/camp.gif?raw=true)
-=======
-# college.leap
+# "college.leap"
 
 ![alt text](https://cdn.dribbble.com/users/1177948/screenshots/4338165/campfire.gif)
->>>>>>> parent of 891f06d... fixed Readme GIF @ 2154 1017
 
-<h3>What does it do?</h3>
+<h3>What is this application?</h3>
 
 college.leap was programmed to help alleviate the stress of a highschool student as they begin their preparation and transition to a college setting. Think of this page as a campfire site in a Role Playing Game where the player, (AKA 'the student') can pause, rest/save their "game" as they continue their "journey" to college. The resources from this app provides all the tools for the user to prepare for their exams as well as giving students preparation for their application essays and interviews.
 
