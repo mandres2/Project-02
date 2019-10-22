@@ -34,18 +34,12 @@ $(document).ready(function() {
 		type: "POST"
 	})
       .then(function(data) {
-<<<<<<< HEAD
         console.log(data);
         window.location.replace("/members");
         // If there's an error, log the error
-=======
-		console.log(data);
-		location.href = "/members";
-		// If there's an error, log the error
->>>>>>> parent of 0489684... cleaned up login/signup inconsistencies
       })
       .catch(function(err) {
-        console.log(err);
+        if(err) throw err;
       });
   }
 });

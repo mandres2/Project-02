@@ -1,20 +1,23 @@
-$(document).ready(function() {
+// $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
 
-  $.get("/api/user_data").then(function(data) {
+  $.ajax({
+    url: "/api/user_data",
+    type: "GET"
+  }).then(function(data) {
     console.log("USER DATA members.js:", data);
     // I have access of the college ID. I need to pass that ID into the API Call. Read the JSON object, and only grab what you need.
     // log in the information in the back-end. worry about the rendering process later.
 
     var collegeID = data.favCollegeID;
     // This will test out the users' selected college ID
-    // console.log(collegeID);
+    console.log("collegeId:", collegeID);
 
     $(".member-name").text(data.email);
-    return collegeID;
-  }).then(function(collegeDataId) {
-    var queryURL = "https://api.data.gov/ed/collegescorecard/v1/schools?id="+collegeDataId+"&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF";
+    // return collegeID;
+  // }).then(function(collegeDataId) {
+    var queryURL = "https://api.data.gov/ed/collegescorecard/v1/schools?id="+collegeID+"&api_key=hJeRaRgcFSddWPeyUWgfur8b6vz2DB0FTDNg0ENF";
 
       $.get(queryURL).then(function(collegeData){
         console.log("college data: ", collegeData)
@@ -111,7 +114,7 @@ $(document).ready(function() {
       });
 
     });
-});
+// });
 
     // The next objective is to render the saved pieces of data
 
