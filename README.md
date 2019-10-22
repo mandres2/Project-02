@@ -1,6 +1,12 @@
 # Project-02 "college.leap"
 
+<<<<<<< HEAD
 ![alt text](https://github.com/mandres2/Project-02/blob/master/public/assets/img/camp.gif?raw=true)
+=======
+# college.leap
+
+![alt text](https://cdn.dribbble.com/users/1177948/screenshots/4338165/campfire.gif)
+>>>>>>> parent of 891f06d... fixed Readme GIF @ 2154 1017
 
 <h3>What does it do?</h3>
 
