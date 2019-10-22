@@ -17,24 +17,21 @@ module.exports = function (app) {
 
   // TODO: you need to separate your auth stuff into a separate file
 
-  app.post("/auth/login", passport.authenticate("local"), function (req, res) {
-    // console.log("back end auth/login route");
+  app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
-    // res.redirect("/chooseCollege");
-
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
-  app.post("/api/user_data", function (req, res) {
+  app.post("/api/signup", function (req, res) {
     db.Users.create({
         email: req.body.email,
         password: req.body.password
       })
       // Redirection to login on successful creation of an account.
       .then(function (result) {
-        res.redirect("/login");
+        res.redirect(307, "/api/login");
       })
       // Recap: The catch() method returns a Promise and deals with rejected cases only.
       .catch(function (err) {
@@ -77,8 +74,8 @@ module.exports = function (app) {
       })
       // Redirection on selecting college.
       .then(function (data) {
-        console.log("updated data backend", data)
-        // res.json(data);
+        console.log("updated data backend", data);
+        res.json(data);
         // res.redirect("/members");
       })
       .catch(function (err) {

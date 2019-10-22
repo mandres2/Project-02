@@ -18,7 +18,7 @@ $(document).ready(function() {
   function signUpUser(userData) {
     // console.log("userData:", userData);
     $.ajax({
-      url: "/api/user_data",
+      url: "/api/signup",
       data: userData,
       type: "POST"
     }).then(function(result) {
@@ -26,9 +26,9 @@ $(document).ready(function() {
         emailInput.val("");
         passwordInput.val("");
         // This is line of code is where it will redirect the first-time user.
-        location.href = "/login";
+        location.href = "/chooseCollege";
 
-    
+
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(function(err) {
@@ -47,6 +47,7 @@ $(document).ready(function() {
 
     if (!userData.email || !userData.password) {
       // TODO: need an error message for the user here
+      alert('Enter valid input');
       return;
     }
     // If we have an email and password, run the signUpUser function

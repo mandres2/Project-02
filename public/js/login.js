@@ -29,7 +29,7 @@ $(document).ready(function() {
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
   function loginUser(userData) {
     $.ajax({
-		url: "/auth/login",
+		url: "/api/login",
 		data: userData,
 		type: "POST"
 	})
