@@ -2,6 +2,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+# college.leap
+
+>>>>>>> parent of 3caf2e1... 2231 1017 ppt modified
 =======
 # college.leap
 
