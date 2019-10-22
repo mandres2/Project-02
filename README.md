@@ -1,22 +1,6 @@
-# Project-02 "college.leap"
+# "college.leap"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-# college.leap
-
->>>>>>> parent of 3caf2e1... 2231 1017 ppt modified
-=======
-# college.leap
-
->>>>>>> parent of 3caf2e1... 2231 1017 ppt modified
 ![alt text](https://github.com/mandres2/Project-02/blob/master/public/assets/img/camp.gif?raw=true)
-=======
-# college.leap
-
-![alt text](https://cdn.dribbble.com/users/1177948/screenshots/4338165/campfire.gif)
->>>>>>> parent of 891f06d... fixed Readme GIF @ 2154 1017
 
 <h3>What does it do?</h3>
 
