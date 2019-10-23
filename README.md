@@ -1,6 +1,6 @@
 # "college.leap"
 
-![alt text](https://cdn.dribbble.com/users/1177948/screenshots/4338165/campfire.gif)
+![alt text](https://github.com/mandres2/Project-02/blob/master/public/assets/img/camp.gif?raw=true)
 
 <h3>What is this application?</h3>
 
