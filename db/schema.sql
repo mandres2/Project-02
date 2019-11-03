@@ -1,9 +1,7 @@
--- To summarize there is going to be 4 tables under one database which is called collegeapp_db
-
 DROP DATABASE IF EXISTS collegeapp_db;
 CREATE DATABASE collegeapp_db;
 
--- Table 1 - This is for User authentication
+-- Table 1 - This is for User authentication & for selected colleges.
 -- CREATE TABLE users (
 -- id INT(11) NOT NULL AUTO_INCREMENT,
 -- email VARCHAR(255),
